@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_loop.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bvelasco <bvelasco@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: samartin <samartin@student.42madrid.es>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 12:31:39 by bvelasco          #+#    #+#             */
-/*   Updated: 2024/12/11 18:03:45 by bvelasco         ###   ########.fr       */
+/*   Updated: 2024/12/17 17:10:31 by samartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,17 @@ void	drawline(void *c3d, int j, float k)
 	}
 }
 
+void	main_visualization(t_cub3d *c3d)
+{
+	if (c3d->player.rotmod == 1)
+		mlx_mouse_move(c3d->mlxgraph.mlx, c3d->mlxgraph.win,
+			WINW / 2, WINH / 2);
+	mlx_put_image_to_window(c3d->mlxgraph.mlx, c3d->mlxgraph.win,
+		c3d->mlxgraph.scrnbuff->img, 0, 0);
+	mlx_put_image_to_window(c3d->mlxgraph.mlx, c3d->mlxgraph.win,
+		c3d->mlxgraph.minimap->texture->img, 0, 0);
+}
+
 int	main_loop(void *c3d)
 {
 	t_cub3d		*cub3d;
@@ -85,9 +96,6 @@ int	main_loop(void *c3d)
 		drawline(c3d, j, k);
 		j++;
 	}
-	mlx_put_image_to_window(cub3d->mlxgraph.mlx, cub3d->mlxgraph.win,
-		cub3d->mlxgraph.scrnbuff->img, 0, 0);
-	mlx_put_image_to_window(cub3d->mlxgraph.mlx, cub3d->mlxgraph.win,
-		cub3d->mlxgraph.minimap->texture->img, 0, 0);
+	main_visualization(cub3d);
 	return (0);
 }

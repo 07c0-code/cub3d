@@ -6,7 +6,7 @@
 /*   By: samartin <samartin@student.42madrid.es>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 13:43:08 by samartin          #+#    #+#             */
-/*   Updated: 2024/12/05 15:51:24 by samartin         ###   ########.fr       */
+/*   Updated: 2024/12/17 16:00:12 by samartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ t_player	init_player(int fd, void *mlxptr)
 	player.xmov = 0;
 	player.ymov = 0;
 	player.rotate = 0;
+	player.rotmod = 0;
 	return (player);
 }

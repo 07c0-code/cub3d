@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bvelasco <bvelasco@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: samartin <samartin@student.42madrid.es>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 10:18:21 by bvelasco          #+#    #+#             */
-/*   Updated: 2024/12/11 17:24:07 by bvelasco         ###   ########.fr       */
+/*   Updated: 2024/12/17 17:03:44 by samartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,8 +74,10 @@ int	main(int argc, char *argv[])
 	c3d.mlxgraph.minimap = new_minimap(&c3d);
 	if (!c3d.is_valid)
 		return (1);
-	mlx_hook(c3d.mlxgraph.win, 2, 1L << 0, move, &c3d.player);
+	mlx_do_key_autorepeatoff(c3d.mlxgraph.mlx);
+	mlx_hook(c3d.mlxgraph.win, 2, 1L << 0, keyspressed, &c3d);
 	mlx_hook(c3d.mlxgraph.win, 3, 1L << 1, unmove, &c3d.player);
+	mlx_hook(c3d.mlxgraph.win, 6, 1L << 6, mouserot, &c3d.player);
 	mlx_loop_hook(c3d.mlxgraph.mlx, main_loop, &c3d);
 	mlx_loop(c3d.mlxgraph.mlx);
 	return (0);
