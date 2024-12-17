@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bvelasco <bvelasco@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: samartin <samartin@student.42madrid.es>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 15:24:32 by samartin          #+#    #+#             */
-/*   Updated: 2024/12/06 23:09:17 by bvelasco         ###   ########.fr       */
+/*   Updated: 2024/12/17 17:12:52 by samartin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,8 @@ enum	e_direction
 	X,
 	Y
 };
-typedef struct s_cub3d
+
+typedef struct	s_cub3d
 {
 	t_mlxgrph	mlxgraph;
 	t_player	player;
