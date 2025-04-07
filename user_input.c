@@ -6,7 +6,7 @@
 /*   By: bvelasco <bvelasco@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 11:35:07 by bvelasco          #+#    #+#             */
-/*   Updated: 2025/04/02 17:42:21 by bvelasco         ###   ########.fr       */
+/*   Updated: 2025/04/07 07:52:21 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,9 +79,9 @@ int	unmove(int keycode, void *param)
 	t_player	*player;
 
 	player = param;
-	if (keycode == 65361)
+	if (keycode == 65361 && player->mouse_lock == 0)
 		player->rotate += 1;
-	if (keycode == 65363)
+	if (keycode == 65363 && player->mouse_lock == 0)
 		player->rotate -= 1;
 	if (keycode == 100)
 		player->xmov = 0;
