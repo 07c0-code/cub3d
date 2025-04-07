@@ -6,7 +6,7 @@
 /*   By: bvelasco <bvelasco@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 20:17:07 by bvelasco          #+#    #+#             */
-/*   Updated: 2025/03/30 16:31:15 by bvelasco         ###   ########.fr       */
+/*   Updated: 2025/04/07 07:49:31 by bvelasco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,17 @@ void	select_wall(t_hitpoint *ht, float *i_crds, float *f_crds)
 	if (ht->hit_dir == X)
 	{
 		if (f_crds[X] >= i_crds[X])
-			ht->wall_pos = EAST;
-		else
 			ht->wall_pos = WEST;
+		else
+			ht->wall_pos = EAST;
 		ht->w_point = f_crds[Y] - (int)f_crds[Y];
 	}
 	else
 	{
 		if (f_crds[Y] >= i_crds[Y])
-			ht->wall_pos = SOUTH;
-		else
 			ht->wall_pos = NORTH;
+		else
+			ht->wall_pos = SOUTH;
 		ht->w_point = f_crds[X] - (int)f_crds[X];
 	}
 }
